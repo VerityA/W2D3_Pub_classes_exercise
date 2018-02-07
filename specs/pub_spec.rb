@@ -6,9 +6,11 @@ class PubTest < MiniTest::Test
 
   def setup
 
-    @drink1 = Drink.new("G+T", 4.5)
-    @drink2 = Drink.new("V+C", 3.5)
-    @drink3 = Drink.new("Wine", 6)
+
+
+    @drink1 = Drink.new("G+T", 4.5, 1)
+    @drink2 = Drink.new("V+C", 3.5, 1.5)
+    @drink3 = Drink.new("Wine", 6, 2)
 
     @drinks = [@drink1, @drink2, @drink3]
     @pub1 = Pub.new("The Alibi", @drinks)
@@ -43,5 +45,9 @@ class PubTest < MiniTest::Test
     money_in_till = @pub1.increase_money_in_till(@drink1)
     assert_equal(104.5, money_in_till)
   end
+
+
+
+
 
 end
